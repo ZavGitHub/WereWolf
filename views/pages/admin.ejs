@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang=en>
+<link rel="stylesheet" href="/css/main.css">
+
+<head>
+    <title>Werewolf</title>
+</head>
+
+<body>
+    <div>Users:</div>
+    <div>
+        <ul>
+            <% for (var [name, role] of users.entries()) { %>
+
+                <form method="post">
+                    <li>
+                        <%= name%> -
+                            <%= role %>
+                                <button type="submit" formaction="/setHuman/<%= name%>">Human</button>
+                                <button type="submit" formaction="/setVampire/<%= name%>">Vampire</button>
+                                <button type="submit" formaction="/setWerewolf/<%= name%>">Werewolf</button>
+                    </li>
+                </form>
+                <% } %>
+        </ul>
+    </div>
+</body>
+
+</html>
